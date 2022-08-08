@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/home.css">
+</head>
+<body>
+    <header class="header">
+		<h1 class="logo">Welcome to <span class="sto">{{user}} </span>Book store</h1>
+        <form action=" " method="post">
+            {% csrf_token %}
+            <input type="text" name="searchstore" placeholder="Search store">
+            <input type="submit" value="search">
+        </form>
+      <ul class="main-nav">
+          
+          <li><a href="{% url 'mystore' %}">Home</a></li>
+          <li><a href="{% url 'storelist' %}">All Stores</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+          
+          
+      </ul>
+	</header> <br><br><br><br>
+
+    <div class="stores">
+        {% for i in store %}
+        
+            <a href="{% url 'details' i.store %}"><div class="store1">{{i.store}}<br>book store</div></a><br><br>
+
+        {% endfor %}
+
+    
+
+        
+        
+        
+    </div>
+    
+</body>
+</html>

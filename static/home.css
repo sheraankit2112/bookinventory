@@ -1,0 +1,195 @@
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.5rem;
+}
+.sto{
+	color:green !important;
+	font-size: 1.5rem !important;
+}
+
+.main-nav {
+	margin-top: 5px;
+
+}
+.storename{
+	padding:2rem;
+	color:green;
+	font-size: 2.5rem;
+	text-align: center;
+	text-decoration: underline;
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.main-nav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+.main-nav a:hover {
+	color: #718daa;
+}
+
+
+
+.header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #f4f4f4;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.stores{
+    height:30vh;
+    width:80%;
+    margin: 0 auto;
+    
+}
+.store1,.store2{
+    height:100%;
+    width:30%;
+    border:8px solid rgb(58, 56, 56);
+    float:left;
+    margin-right:3.7rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    padding:2rem;
+    text-align: center;
+    background-color: rgb(0, 162, 255);
+    color:white;
+	margin-left: 23rem;;
+	
+    
+
+}
+.fom{
+    height:40vh;
+    width:30%;
+    margin:0 auto;
+    text-align: center;
+}
+.fom form input[type=submit]{
+    font-size: 1rem;;
+    
+}
+.store1:hover,.store2:hover,.store3:hover{
+    background-color:aqua;
+    color:black;
+
+}
+
+.editbutton{
+	
+	
+	text-align: center;
+	
+
+}
+
+/* .editbutton:hover{
+	background-color: aqua !important;
+	
+} */
+.editbutton a:hover{
+	color:#ca4f39;
+	
+	
+}
+.editbutton a{
+	
+	color:blue;
+	text-decoration: underline;
+	
+}
+.removebutton:hover{
+	color:#ca4f39;
+	
+
+}
+.removebutton{
+	color:blue;
+	text-decoration: underline;
+
+}
+.add{
+	margin-left: 68rem;;
+	padding:0.5rem 2rem;
+	background-color: #ca4f39;
+	color: white;
+}
+.add:hover{
+	background-color: rgb(93, 150, 103);
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+
+
+@media (min-width: 769px) {
+	.header,
+	.main-nav {
+		display: flex;
+	}
+	.header {
+		flex-direction: column;
+		align-items: center;
+    	.header{
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1150px;
+	}
+	}
+
+}
+
+@media (min-width: 1025px) {
+	.header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+}
+

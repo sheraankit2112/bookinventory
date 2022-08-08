@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/registertemplate.css">
+    <style>
+        .errors{
+            color:rgb(0, 255, 242);
+            font-size: 2rem;
+        }
+        .errorlist li{
+            color:rgb(0, 255, 242);
+            font-size:2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <p class="logo">Register</p><br><br>
+        <form action=" " method="post">
+            {% csrf_token %}
+            {% for i in form %}
+            {{i}}{% if i.errors %}<br><span class="errors">{{i.errors|striptags}}</span><br>{% endif %}
+            <br><br>
+            {% endfor %}
+            {{ form.non_field_errors }}<br><br><br><br>
+            <input type="submit" value="Register">
+        </form><br><br>
+        <span class="already">Already registered?
+        </span><a class="register" href="{% url 'home' %}">Login here</a>
+    </div>
+</body>
+</html>

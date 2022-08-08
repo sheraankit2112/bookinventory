@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/logintemplate.css">
+    <style>
+        .errorss{
+            color:rgb(0, 255, 242);
+            font-size: 1.5rem;
+        }
+        .error{
+            
+            color:rgb(0, 255, 242);
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body><br><br><br><br>
+    <h1>Welcome to <span class="shera"> Shera Books</span></h1>
+    
+    <div class="form">
+        <p class="logo">LOGIN</p><br><br>
+        <form action=" " method="post">
+            {% csrf_token %}
+            {% for i in form %}
+            {{i}}{% if i.errors %}<br><span class="errorss">{{i.errors|striptags}}</span><br>{% endif %}
+            <br><br>
+            {% endfor %}
+            {% if messages %}
+            {% for i in messages %}
+            <small {% if i.tags %} class="{{i.tags}}" {% endif %}>{{i}}</small>
+            {% endfor %}
+            {% endif %}<br><br>
+            
+            <input type="submit" value="login">
+        </form><br><br>
+        <span class="already">Do not register?
+        </span><a  href="{% url 'register' %}" class="register">Register here</a>
+    </div>
+</body>
+</html>

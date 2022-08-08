@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+body{
+    position: relative;
+    height:100vh;
+    background-color: rgb(0, 0, 0);
+}
+h1{
+    background-color: rgb(95, 97, 97);
+    font-size: 4rem;
+    padding:1rem;
+    color:white;
+    text-align: center;
+
+}
+.shera{
+    color: rgb(34, 202, 34);;
+    font-size: 4rem;
+}
+
+
+.form{
+    position: absolute;
+    height:50vh;
+    width:25%;
+    
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding:2rem;
+    background-color: rgb(102, 98, 98);
+    text-align: center;
+}
+.form input[type=text],.form input[type=password]{
+    height:4rem;
+    width:100%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.logo{
+    font-size: 4rem;;
+    font-weight: 600;
+    text-align: center;
+    color:rgb(40, 113, 247)
+}
+.form input[type=submit]{
+    padding:0rem 4rem;
+    border: none;
+    height: 3rem;
+    font-size: 2rem;
+    background-color: blue;
+    color: white;
+    border-radius: 2rem;
+    
+}
+.form input[type=submit]:hover{
+    background-color:rgb(6, 6, 82);
+}
+.already{
+    font-size: 2rem;
+    color: white;
+}
+.register{
+    text-decoration: none;
+    font-size: 2rem;
+    color: rgb(62, 233, 255);
+}

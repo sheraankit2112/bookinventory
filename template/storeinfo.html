@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/home.css">
+    <style>
+        
+table{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+}
+
+td,th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+.success{
+    color:white;
+    background-color: green;
+    height:4rem;
+    width:100%;
+    display: block;
+    padding:1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+</style>
+</head>
+<body>
+    <header class="header">
+		<h1 class="logo">Welcome to <span class="sto">{{user}} </span>Book store</h1>
+        <form action=" " method="post">
+            {% csrf_token %}
+            <input type="text" name="searchbook" placeholder="Search book">
+            <input type="submit" value="search">
+        </form>
+      <ul class="main-nav">
+          
+          <li><a href="{% url 'mystore' %}">Home</a></li>
+          <li><a href="{% url 'storelist' %}">All Stores</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+          
+      </ul>
+	</header>
+    
+    
+
+    <h1 class="storename">{{store}} Book Store</h1>
+    
+    <div class="books data">
+        <table  style="border-collapse: collapse;">
+            <tr>
+                <th>Book</th>
+                <th>Author</th>
+                <th>Price(in rupees)</th>
+                <th>Stocks</th>
+                
+            </tr>
+            {% for i in st %}
+            <tr>
+                <td>{{i.book}}</td>
+                <td>{{i.author}}</td>
+                <td>{{i.price}}</td>
+
+                <td>{% if i.counts == 0 %}Out of Stock {% else %}{{i.counts}}{% endif %}</td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+</body>
+</html>
